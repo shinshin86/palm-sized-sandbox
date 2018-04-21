@@ -6,6 +6,8 @@ Tye design using sticky
 
 ## Demo
 
+![gif demo](https://github.com/shinshin86/palm-sized-sandbox/blob/master/web-design/try-sticky/gif/20180422demo.gif?raw=true)
+
 
 
 ## Try
