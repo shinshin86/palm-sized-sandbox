@@ -1,0 +1,14 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["react-app", 'plugin:flowtype/recommended'],
+  "rules": {
+    "jsx-a11y/href-no-hash": 0,
+    "import/no-webpack-loader-syntax": 0
+  },
+  plugins: ['flowtype'],
+  settings: {
+    flowtype: {
+      onlyFilesWithFlowAnnotation: true,
+    },
+  }
+}
