@@ -11,7 +11,9 @@ export default class FieldInput extends Component {
       <div>
         <label>{label}</label>
         <div>
-          <input {...input} placeholder={label} type={type} />
+          <textarea
+            {...input}
+            type={type} />
           { touched && error && <span style={{color: 'red'}}>{error}</span>}
         </div>
       </div>

@@ -1,94 +1,22 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
+import FieldInput from './formComponents/FieldInput'
+import RadioInput from './formComponents/RadioInput'
+import SelectInput from './formComponents/SelectInput'
+import CheckboxInput from './formComponents/CheckboxInput'
+import TextareaInput from './formComponents/TextareaInput'
 
 const SimpleForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <label>First Name</label>
-        <div>
-          <Field
-            name="firstName"
-            component="input"
-            type="text"
-            placeholder="First Name"
-          />
-        </div>
-      </div>
-      <div>
-        <label>Last Name</label>
-        <div>
-          <Field
-            name="lastName"
-            component="input"
-            type="text"
-            placeholder="Last Name"
-          />
-        </div>
-      </div>
-      <div>
-        <label>Email</label>
-        <div>
-          <Field
-            name="email"
-            component="input"
-            type="email"
-            placeholder="Email"
-          />
-        </div>
-      </div>
-      <div>
-        <label>Sex</label>
-        <div>
-          <label>
-            <Field
-              name="sex"
-              component="input"
-              type="radio"
-              value="male"
-            />{' '}
-            Male
-          </label>
-          <label>
-            <Field
-              name="sex"
-              component="input"
-              type="radio"
-              value="female"
-            />{' '}
-            Female
-          </label>
-        </div>
-      </div>
-      <div>
-        <label>Favorite Color</label>
-        <div>
-          <Field name="favoriteColor" component="select">
-            <option />
-            <option value="ff0000">Red</option>
-            <option value="00ff00">Green</option>
-            <option value="0000ff">Blue</option>
-          </Field>
-        </div>
-      </div>
-      <div>
-        <label htmlFor="employed">Employed</label>
-        <div>
-          <Field
-            name="employed"
-            id="employed"
-            component="input"
-            type="checkbox"
-          />
-        </div>
-      </div>
-      <div>
-        <label>Notes</label>
-        <div>
-          <Field name="notes" component="textarea" />
-        </div>
-      </div>
+      <Field name="firstName" type="text" component={FieldInput} label="First Name"/>
+      <Field name="lastName" type="text" component={FieldInput} label="Last Name"/>
+      <Field name="email" type="email" component={FieldInput} label="Email"/>
+      <Field name="sex" type="radio" component={RadioInput} label="Sex" />
+      <Field name="favoriteColor" type="select" component={SelectInput} label="Favorite Color" />
+      <Field name="employed" type="checkbox" component={CheckboxInput} label="Employed" />
+      <Field name="notes" type="textarea" component={TextareaInput} label="Notes" />
       <div>
         <button type="submit" disabled={pristine || submitting}>
           Submit
