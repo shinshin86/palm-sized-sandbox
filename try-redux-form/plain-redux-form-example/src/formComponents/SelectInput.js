@@ -21,6 +21,7 @@ export default class RadioInput extends Component {
             <option value="00ff00">Green</option>
             <option value="0000ff">Blue</option>
           </Field>
+          { touched && error && <span style={{color: 'red'}}>{error}</span>}
         </div>
       </div>
     )
